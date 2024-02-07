@@ -61,7 +61,7 @@ const getQuestionById = async (req, res) => {
 
     res.status(200).json(question);
   } catch (error) {
-    console.error('Error retrieving question by ID:', error.message);
+    console.error('Error retrieving question by ID:', error);
     res.status(500).send('Internal Server Error');
   }
 };

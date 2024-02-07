@@ -5,6 +5,6 @@ const router = express.Router();
 
 router.post('/addQuestions', questionsController.addQuestions);
 router.get('/getQuestions', questionsController.getQuestions);
-router.get('/getQuestions/:id',questionsController.getQuestionById);
+router.get('/getQuestions/:questionId',questionsController.getQuestionById);
 
 module.exports = router;
