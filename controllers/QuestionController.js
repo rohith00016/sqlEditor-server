@@ -3,9 +3,11 @@ const Questions = require('../db/models/Questions');
 
 const addQuestions = async (req, res) => {
   const validationRules = [
+    body('questionName').isString().withMessage('questionName must be an string'),
+    body('hardnessScore').isString().withMessage('hardnessScore must be an string'),
     body('tableNames').isArray().withMessage('Table names must be an array'),
     body('tags').isArray().withMessage('Tags must be an array'),
-    body('status').isArray().withMessage('Status must be an array'),
+    body('status').isString().withMessage('Status must be an string'),
     body('dataCMD').isString().withMessage('DataCMD must be a string'),
     body('dataTableCMD').isArray().withMessage('DataTableCMD must be an array'),
     body('description').isString().withMessage('Description must be a string'),
@@ -51,6 +53,7 @@ const getQuestions = async (req, res) => {
 
 const getQuestionById = async (req, res) => {
   const { questionId } = req.params;
+  console.log('Question ID:', questionId); // Log the questionId being used
 
   try {
     const question = await Questions.findById(questionId);

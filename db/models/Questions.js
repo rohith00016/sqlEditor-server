@@ -29,6 +29,12 @@ const answerSchema = new Schema({
 });
 
 const questionSchema = new Schema({
+  questionName: {
+    type: String,
+  },
+  hardnessScore: {
+    type: String,
+  },
   tableNames: {
     type: [String],
     required: true,
