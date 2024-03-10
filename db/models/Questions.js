@@ -29,6 +29,9 @@ const answerSchema = new Schema({
 });
 
 const questionSchema = new Schema({
+  questionCategory: {
+    type: String,
+  },
   questionName: {
     type: String,
   },
@@ -62,7 +65,7 @@ const questionSchema = new Schema({
   answers: [answerSchema],
   readme: {
     type: String,
-    required: true,
+    required: false,
   },
 });
 
