@@ -3,7 +3,7 @@ const Questions = require("../db/models/Questions");
 
 const addQuestions = async (req, res) => {
   const isReadmeNeeded = req.headers.condition
-  console.log(isReadmeNeeded)
+
   const validationRules = [
     body("questionCategory")
       .notEmpty()
